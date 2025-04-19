@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <iostream>
+
+using namespace std ;
+
+int main(){
+    int matriz[4][4]={{4,4,5,3},{0,3,4,9},{0,2,0,0},{0,5,5,0}};//cuatro filas y cuatro columnas 
+    for(int i=0 ; i<4 ; i++){
+     for(int j=0 ; j<4 ; j++){
+         
+         std::cout <<matriz[i][j] << " " ;
+         
+     } std::cout<<std::endl ;
+    }return 0 ;
+}
