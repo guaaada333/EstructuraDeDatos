@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+void mostrarArreglo(int G[], int m);//funcion para mostrar el arreglo en pantalla
+
+int main(){
+    int G[6]; //declaracion de arreglo de 6 enteros
+    
+    for(int i=0 ; i<6 ; i++){//ciclo for para que el usuario introduzca 6 veces un numero
+    cout<<"introducir arreglo"<<endl;
+    cin>>G[i] ;//aca se guarda lo q el usuario pone
+    
+    }
+    mostrarArreglo(G,6);//llamo a la funcion mostrarArreglo y muestra el arreglo
+    return 0 ;
+}
+void mostrarArreglo(int G[],int m){//la funcion mostrarArreglo 
+for(int i=0 ; i<m ; i++){
+    cout << G[i] << " - "; //muestra cada elemento que se guardo en el arreglo
+    
+}   
+}
