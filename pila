@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std ;
+
+
+//funciones 
+void agregarElemento(int x , int S[],int n , int &tope);
+int quitarElemento(int S[], int &tope);
+
+int main(){
+    int S[6] ;// arreglo vacio
+    int n=6;// elementos maximo a agregar
+    int tope = -1 ;// pila vacio
+    int ok=0 ;
+    int quitado ;
+    
+for(int i=0 ; i<n ; i++){
+    cout << "agregar elemento : " <<endl ;
+    cin >> ok ;
+    agregarElemento(ok,S,n,tope);
+}
+    quitado=quitarElemento(S,tope);
+    cout<<"se elemino el elemento "<< quitado <<endl;
+     
+     return 0 ;
+}
+
+
+void agregarElemento(int x , int S[], int n , int &tope){
+    if(tope== n){
+        cout<<"la pila esta llena "<<endl ;
+    }else{
+        tope=tope + 1 ;
+        S[tope]=x ;
+    }
+}
+
+int quitarElemento(int S[],int &tope){
+    int x ;
+    if(tope<0){
+        cout<<"la pila esta vacia ";
+        return -9999 ;
+    }else{
+        x=S[tope];
+        tope=tope - 1 ;
+        return x ;
+    }
+}
