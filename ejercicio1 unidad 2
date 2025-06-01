@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+void mostrarArreglo(int M[],int n);
+void mostrarArregloAlReves(int M[],int n);
+
+int main(){
+    
+    int M[]={1,2,3,4,5};
+   const int n=5;
+   
+   cout<<"El arreglo comun es"<<endl;
+    mostrarArreglo(M,n);
+     cout<<" "<<endl;
+    
+       cout<<"El arreglo de manera decreciente es"<<endl ;
+       mostrarArregloAlReves(M,n);
+
+ 
+    return 0;
+}
+
+void mostrarArreglo(int M[],int n){
+    
+    for(int i=0 ; i<n ;i++){
+        cout<< M[i] <<endl ;
+    }
+}
+
+void mostrarArregloAlReves(int M[],int n){
+    for(int i=n-1 ; i>=0 ;i--){
+        cout<< M[i] <<endl ;
+    }
+}
