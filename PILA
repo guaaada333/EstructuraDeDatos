@@ -1,0 +1,59 @@
+#include <iostream>
+using namespace std ;
+void agregarPila(int x,int A[],int n , int &tope);
+void mostrar(int A[],int tope);
+void eliminarPila(int A[], int &tope);
+
+// PILA
+int main(){
+    int A[5];
+    int n=5;
+    int tope = -1 ;
+    int x;
+    
+
+  agregarPila(x,A,n ,tope);
+ cout<<"La pila es"<<endl ;
+  mostrar(A,tope);
+  
+  
+  eliminarPila(A,tope);
+
+  mostrar(A,tope);
+
+    return 0;
+}
+
+void agregarPila(int x,int A[],int n , int &tope){
+       for(int i=0;i<n ;i++){ //itera n veces para que el usuario ingrese los numeros 
+       cout<<"ingrese numero" <<endl ;
+       cin>>x ;//aca coloca el usuario
+        
+        
+    if(tope==n-1){//la pila llega hasta cuatro elementos por eso es n-1=4
+        cout<<"pilla llena" <<endl ;
+    }else{
+        tope++ ;//suma en tope (el tope emmpieza en -1 y al colocar un elemento en el arreglo)
+                             //( el seria tope = 0 , y ahi se guarda el elemento x)                                                        )
+        A[tope]=x ;//guarda el elemento x en el arreglo en la posicion tope
+    }
+       }
+}
+
+
+void mostrar(int A[],int tope){
+         for(int i=tope ; i>=0 ; i--){//muestra de la manera tope hacia abajo(como una pila de platos)
+             cout<<A[i]<<endl;//muestra cada elemento i de la pila(arreglo) 
+}
+
+}
+
+void eliminarPila(int A[], int &tope) {
+    if (tope == -1) {
+        cout << "Pila vacía, no se puede modificar" << endl;
+    } else {
+        cout << "Elemento reemplazado por 0: " << A[tope] << endl;
+        A[tope] = 0; // reemplaza el valor por 0 sin modificar el tope
+    }
+}
+    
