@@ -2,7 +2,6 @@
 using namespace std ;
 
 
-void mostrar(char A[],int n);
 void eleminar(char A[],int n , char x);
 void mostrar(char A[],int n);
 
