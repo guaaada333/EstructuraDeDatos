@@ -1,0 +1,61 @@
+#include <iostream>
+using namespace std ;
+int front=0;//donde eleminar
+int rear=0;//donde se inserta
+int n=5 ;//numero de elementos del arreglo
+int cola[5];
+
+void eleminar();
+void agregar(int x);
+void mostrar();
+ 
+ int main(){
+     agregar(2);
+     agregar(3);
+     agregar(6);
+     agregar(7);
+     cout<<endl ;
+          cout<<"la cola circular es :"<<endl;
+          mostrar();
+
+     
+     eleminar();
+
+     
+         cout<<endl ;
+ 
+     cout<<"la cola circular despues de eleminar es :"<<endl;
+     mostrar();
+     
+     
+     
+     return 0 ;
+ }
+ void agregar(int x ){
+     rear=(rear+1)%n ;
+     
+     if(front==rear){
+         cout<<"cola llena";
+     }else{
+         cola[rear]=x ;
+     }
+     
+ }
+ void eleminar(){
+          if(front==rear){
+              cout<<"cola vacia ";
+          }else{
+              front=(front+1)%n;
+          }
+ }
+ void mostrar(){
+     for(int i=(front+1)%n ;i!=(rear+1)%n;i=(i+1)%n){
+         cout<<cola[i]<<" ";
+         
+         
+     }
+ }
+ 
+ 
+ 
+ 
