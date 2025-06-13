@@ -32,13 +32,15 @@ void eliminar() {
     cout << "Elemento eliminado: " << cola[front] << endl;
     front = (front + 1) % n;
 }
-void agregar(int x){
-    int next= (rear+1)%n ;
-        
-     cola[rear]=x ;
-        rear = (rear + 1) % n;
-        
+void agregar(int x) {
+    int next = (rear + 1) % n;
+    if (next == front) {
+        cout << "Cola llena, no se puede agregar." << endl;
+        return;
     }
+    cola[rear] = x;
+    rear = next;
+}
 
 void mostrar(){
     for (int i = front; i != rear; i = (i + 1) % n) {
