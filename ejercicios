@@ -1,4 +1,3 @@
-
 // ejercicio 1
 int main()
 {   //total de operaciones elementales 9
@@ -21,6 +20,194 @@ int main()
     }
 
     
+    
+    return 0;// 1 oe
+}
+
+
+//ejercicio 2 
+//operaciones elementales 6 en total
+int main(){
+    float monto;
+    float cuota;
+    
+    
+    cout<<"Ingrese monto: "<<endl;
+    cin>>monto;
+    
+    if(monto<50000){//1 oe
+        cout<<"Cuota a pagar por el 3% del monto"<<endl;
+        cuota= monto*0.03;// 2 oe
+        cout<<"La cuota es: "<<cuota<<endl;
+    }else{
+        cout<<"Cuota a pagar por el 2% del monto"<<endl;
+        cuota= monto*0.02;// 2 oe
+        cout<<"La cuota es: "<<cuota<<endl;
+    }
+
+    
+    
+    return 0;// 1 oe
+}
+//ejercicio 03
+//operaciones elementales 16  
+int main(){
+int numeroDeCompus;
+    float descuento, total, precioFinal;
+    
+    cout<<"Ingrese la cantidad de computadoras que desea comprar: "<<endl;
+    cin>>numeroDeCompus;
+    
+    total= numeroDeCompus*11000;// 2 oe
+    
+    if(numeroDeCompus<5){// 1  oe
+        descuento= total*0.10;// 2 oe
+        cout<<"El descuento es: "<<descuento<<endl;
+        
+    }else if(numeroDeCompus>=5 && numeroDeCompus<10){//4 oe
+        descuento=total*0.20;//2 oe
+        cout<<"El descuento es: "<<descuento<<endl;
+    }else{
+        descuento=total*0.40;//2 oe
+        cout<<"El descuento es: "<<descuento<<endl;
+    }
+    
+    precioFinal= total-descuento;//2 oe
+    
+    cout<<"El precio final es: "<<precioFinal;
+
+
+return 0 ;// 1 oe
+
+}
+//ejercicio 4 
+/// operaciones elementales total 
+int main(){
+int edadAños, edadMeses;
+    char sexo; 
+    float hemoglobina, minimo, maximo;
+    
+cout<<"Ingrese la edad en años: "<<endl;
+cin>>edadAños;
+
+cout<<"Ingrese la edad en meses: "<<endl;
+cin>>edadMeses;
+
+cout<<"Ingrese el sexo, F(femenino), M(masculino): "<<endl;
+cin>>sexo;
+
+cout<<"Ingrese el porcentaje de hemoglobina: "<<endl;
+cin>>hemoglobina;
+
+minimo=0;//1 oe
+maximo=0;//1 oe
+
+if(edadAños==0 && edadMeses<=1){//4 oe
+    minimo=13; maximo=26;//2 oe 
+}else if(edadAños==0 && edadMeses>1 && edadMeses<=6){//6 oe
+    minimo=10; maximo=18;//2 oe 
+}else if(edadAños==0 && edadMeses>6 && edadMeses<=12){//6 oe
+    minimo=11; maximo=15;//2 oe 
+}else if(edadAños>1 && edadAños<=5){// 4 oe
+    minimo=11.5; maximo=15;//2 oe 
+}else if(edadAños>5 && edadAños<=10){//4 oe
+    minimo=12.6; maximo=15.5;//2 oe 
+}else if(edadAños>10 && edadAños<=15){//4 oe
+    minimo=13; maximo=15.5;//2 oe 
+}else if(sexo=='F' && edadAños>15){// 3 oe
+    minimo=12; maximo=16;//2 oe 
+}else if(sexo=='M'  && edadAños>15){// 3 oe
+    minimo=14; maximo=18;//2oe
+}else{
+    cout<<"Edad no valida"<<endl;
+}
+
+if(hemoglobina<minimo){//1 oe
+    cout<<"POSITIVO, TIENE ANEMIA"<<endl;
+}else{
+    cout<<"NEGATIVO, NO TIENE ANEMIA"<<endl;
+}
+
+
+    return 0;// 1 oe
+}
+
+//ejercicio 5
+using namespace std;
+
+int main() {
+    float promedio, descuento = 0;// 1 oe
+    int reprobadas, unidades = 0;// 1 oe
+    char nivel; // 'P' = preparatoria, 'U' = profesional
+    float costoBase, costoFinal;
+
+    cout << "Ingrese el promedio del alumno: ";
+    cin >> promedio;
+    cout << "Ingrese el nivel (P = Preparatoria, U = Profesional);
+    cin >> nivel;
+
+    if (nivel == 'P' || nivel == 'p') {//3 oe
+        cout << "Ingrese el numero de materias reprobadas: ";
+        cin >> reprobadas;
+
+        if (promedio >= 9.5) {// 2 oe
+            unidades = 55;// 1 oe
+            descuento = 0.25;// 1 oe
+        } else if (promedio >= 9 && promedio < 9.5) {//4 oe
+            unidades = 50;// 1 oe
+            descuento = 0.10;// 1 oe
+        } else if (promedio > 7 && promedio < 9) {// 3 oe
+            unidades = 50;// 1 oe
+            descuento = 0;// 1 oe
+        } else if (promedio <= 7) {// 2 oe
+            if (reprobadas >= 0 && reprobadas <= 3) {// 5 oe
+                unidades = 45;// 1 oe
+            } else {
+                unidades = 40;// 1 oe
+            }
+            descuento = 0;// 1 oe
+        }
+        costoBase = (unidades / 5.0) * 180; // 3 oe
+    }
+    else if (nivel == 'U' || nivel == 'u') {// 3 oe
+        if (promedio >= 9.5) {// 2 oe
+            unidades = 55;// 1 oe
+            descuento = 0.20;// 1 oe
+        } else {
+            unidades = 55;// 1 oe
+            descuento = 0;// 1 oe
+        }
+        costoBase = (unidades / 5.0) * 300; // 3 oe
+    }
+    else {
+        cout << "Nivel invalido." << endl;
+        return 0;// 1 oe
+    }
+
+    costoFinal = costoBase - (costoBase * descuento);//3 oe
+
+    cout << "Unidades permitidas: " << unidades << endl;
+    cout << "Costo sin descuento: $" << costoBase << endl;
+    cout << "Descuento aplicado: " << descuento * 100 << "%" << endl;
+    cout << "Total a pagar: $" << costoFinal << endl;
+
+    return 0;// 1 oe
+}
+    }
+    else {
+        cout << "Nivel invalido." << endl;
+        return 0;// 1 oe
+    }
+
+    costoFinal = costoBase - (costoBase * descuento);
+
+    cout << "Unidades permitidas: " << unidades << endl;
+    cout << "Costo sin descuento: $" << costoBase << endl;
+    cout << "Descuento aplicado: " << descuento * 100 << "%" << endl;
+    cout << "Total a pagar: $" << costoFinal << endl;
+
+    return 0;//1 oe
+}
     
     return 0;// 1 oe
 }
