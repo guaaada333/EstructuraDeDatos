@@ -1,0 +1,26 @@
+
+// ejercicio 1
+int main()
+{   //total de operaciones elementales 9
+    int numero;
+    float compra= 2000;//1 oe
+    float descuento;
+    
+    
+    cout<<"Ingrese un numero al azar: "<<endl;
+    cin>>numero;
+    
+    if(numero<74){// 1 oe
+        cout<<"Usted ha recibido un descuento del 15%"<<endl;
+        descuento= (compra*15)/100;// 3 oe
+        cout<<"El descuento es: "<<descuento<<endl;
+    }else{
+        cout<<"Usted ha recibido un descuento del 20%"<<endl;
+        descuento= (compra*20)/100;// 3 oe
+        cout<<"El descuento es: "<<descuento<<endl;
+    }
+
+    
+    
+    return 0;// 1 oe
+}
